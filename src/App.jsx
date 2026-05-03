@@ -1,11 +1,19 @@
 import "./App.css";
+import Navbar from "./components/Navbar.jsx";
+import HeroHeader from "./components/HeroHeader.jsx";
+import MarkettingCard from "./components/marketingCard.jsx";
+import ListScroll from "./components/listscroll.jsx";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline ">Hello, Vite + React!</h1>
-      <div className="text-green-600 text-5xl ">Hola</div>
-    </>
+    <div className="bg-gray-800">
+      <Navbar />
+      <HeroHeader />
+      <Outlet />
+      <MarkettingCard />
+      <ListScroll />
+    </div>
   );
 }
 
