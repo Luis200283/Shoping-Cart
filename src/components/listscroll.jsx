@@ -15,7 +15,7 @@ export default function ListScroll() {
             >
               <img
                 className="size-16 rounded-full"
-                src={`/src/assets/users/${user}.avif`}
+                src={`/public/users/${user}.avif`}
                 alt="image of user"
               />
               <div>
@@ -37,7 +37,7 @@ export default function ListScroll() {
             >
               <img
                 className="size-16 rounded-full"
-                src={`/src/assets/users/${user}.avif`}
+                src={`/public/users/${user}.avif`}
                 alt="image of user"
               />
               <div>

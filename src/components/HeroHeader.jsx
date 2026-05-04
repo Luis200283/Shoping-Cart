@@ -12,7 +12,7 @@ function HeroHeader() {
       <div className="max-w-300 md:h-200">
 
         <img
-          src="/src/assets/icons/phone2.svg"
+          src="/public/icons/phone2.svg"
           alt=""
           className="h-full relative size-150 md:size-120 left-2 md:top-30"
         />

@@ -3,7 +3,7 @@ export default function MarkettingCard() {
     <div className="mx-auto max-w-sm overflow-hidden rounded-xl bg-white shadow-md md:max-w-2xl md:flex  my-10">
       <img
         className="h-48 w-full md:shrink-0 object-cover object-bottom md:h-full md:w-48"
-        src="/src/assets/building.avif"
+        src="/public/building.avif"
         alt="Modern building architecture"
       />
       <div className="p-8">
