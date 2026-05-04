@@ -1,3 +1,5 @@
+import heroImage from "/public/icons/phone2.svg"
+
 function HeroHeader() {
   return (
     <header className="flex items-center overflow-hidden justify-between h-100 sm:h-120 bg-linear-to-r from-slate-900 to-slate-700 ">
@@ -12,7 +14,7 @@ function HeroHeader() {
       <div className="max-w-300 md:h-200">
 
         <img
-          src="/public/icons/phone2.svg"
+          src={`${heroImage}`}
           alt=""
           className="h-full relative size-150 md:size-120 left-2 md:top-30"
         />
