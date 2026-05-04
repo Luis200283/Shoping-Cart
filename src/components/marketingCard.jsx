@@ -1,9 +1,11 @@
+import img from "/src/assets/building.avif"
+
 export default function MarkettingCard() {
   return (
     <div className="mx-auto max-w-sm overflow-hidden rounded-xl bg-white shadow-md md:max-w-2xl md:flex  my-10">
       <img
         className="h-48 w-full md:shrink-0 object-cover object-bottom md:h-full md:w-48"
-        src="/public/building.avif"
+        src={`${img}`}
         alt="Modern building architecture"
       />
       <div className="p-8">

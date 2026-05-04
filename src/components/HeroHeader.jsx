@@ -1,4 +1,4 @@
-import heroImage from "/public/icons/phone2.svg"
+import Icon from "/src/assets/icons/phone2.svg"
 
 function HeroHeader() {
   return (
@@ -14,7 +14,7 @@ function HeroHeader() {
       <div className="max-w-300 md:h-200">
 
         <img
-          src={`${heroImage}`}
+          src={`${Icon}`}
           alt=""
           className="h-full relative size-150 md:size-120 left-2 md:top-30"
         />

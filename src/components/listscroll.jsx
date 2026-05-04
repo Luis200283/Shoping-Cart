@@ -1,3 +1,7 @@
+import imgList from "/src/assets/users/img.jsx";
+
+console.log(imgList)
+
 const list = ["user1", "user2", "user3", "user4", "user5", "user6"];
 
 export default function ListScroll() {
@@ -8,14 +12,14 @@ export default function ListScroll() {
           Contacts
         </div>
         <div className="text-white bg-gray-800">
-          {list.map((user) => (
+          {list.map((user, index) => (
             <div
               key={user}
               className="flex items-center p-4 gap-4 border-b border-gray-700 pb-2"
             >
               <img
                 className="size-16 rounded-full"
-                src={`/public/users/${user}.avif`}
+                src={`${imgList[index]}`}
                 alt="image of user"
               />
               <div>
@@ -30,14 +34,14 @@ export default function ListScroll() {
           Otros Contactos
         </div>
         <div className="text-white bg-gray-800 ">
-          {list.map((user) => (
+          {list.map((user, index) => (
             <div
               key={user}
               className="flex items-center p-4 gap-4 mb-4 border-b border-gray-700 pb-2"
             >
               <img
                 className="size-16 rounded-full"
-                src={`/public/users/${user}.avif`}
+                src={`${imgList[index]}`}
                 alt="image of user"
               />
               <div>
