@@ -80,7 +80,7 @@ function Navbar() {
 
       <div
         id="Cart-Modal"
-        className={`${open ? "hidden": "block"} bg-white w-full sm:w-100 h-110 absolute right-1 top-16 rounded-sm p-6`}
+        className={`${open ? "block": "hidden"} bg-white w-full sm:w-100 h-110 absolute right-1 top-16 rounded-sm p-6`}
       >
         <h1 className="text-2xl font-bold border-b-2 border-gray-200 py-1">
           Shoping Cart
