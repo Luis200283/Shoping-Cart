@@ -1,9 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar.jsx";
 import HeroHeader from "./components/HeroHeader.jsx";
-import MarkettingCard from "./components/marketingCard.jsx";
-import ListScroll from "./components/listscroll.jsx";
-import Product from "./routes/Product.jsx";
+import Product from "./components/Product.jsx";
 
 function App() {
   return (
@@ -11,8 +9,8 @@ function App() {
       <Navbar />
       <HeroHeader />
       <Product />
-      <MarkettingCard />
-      <ListScroll />
+      <Product />
+      <Product />
     </div>
   );
 }
