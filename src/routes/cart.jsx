@@ -1,35 +1,25 @@
-import { useLoaderData } from "react-router-dom";
+// import { useEffect, useState } from "react";
 
-// eslint-disable-next-line react-refresh/only-export-components
-export async function loader() {
-    const reponse = await fetch('https://fakestoreapi.com/carts/1')
-    const cart = await reponse.json()
-
-    const productsPromises = cart.products.map(async (item) => {
-        const res = await fetch(`https://fakestoreapi.com/products/${item.productId}`)
-        return await res.json()
-    })
-    const productsList = await Promise.all(productsPromises)
-
-    return { productsList }
-}
-
-function Product({ data, index }) {
-    console.log(data)
+function Product({ data }) {
     return (
-        <div key={index} className="p-2 my-1 flex justify-between items-center">
+        <div className="p-2 my-1 flex justify-between items-center">
             <div id="info" className="flex items-center gap-4">
                 <img src={`${data.image}`} className="size-12" />
                 <div className="leading-5">
                     <h1 className="font-bold">{data.title}</h1>
                     <p className="text-gray-800 font-medium">{data.category}</p>
-                    <p className="text-gray-400">Q: 2</p>
+                    <p className="text-gray-400">Q: {data.quantity}</p>
                 </div>
             </div>
             <div className="flex items-center gap-4">
                 <div
                     id="Trash"
                     className="w-10 h-10 bg-white shadow-sm/30 flex items-center justify-center rounded-sm  hover:bg-gray-100 group"
+                    onClick={() => {
+                        const cart = JSON.parse(localStorage.getItem("products"))
+                        const updated = cart.filter((current) => current.id !== data.id)
+                        localStorage.setItem('products', JSON.stringify(updated))
+                    }}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -53,8 +43,11 @@ function Product({ data, index }) {
 }
 
 export default function Cart() {
-    const { productsList } = useLoaderData();
-    console.log(productsList)
+    let productsList = JSON.parse(localStorage.getItem('products'))
+    // const [productsList, setProductsList] = useState(storedProducts)
+    // console.log(productsList)
+ 
+
     return (
         <div
             id="Cart-Modal"
@@ -69,7 +62,7 @@ export default function Cart() {
                 className="border-b-2 border-gray-200 py-1 h-45 overflow-auto"
             >
                 {productsList.map((product, index) => {
-                    return <Product data={product} index={index} />
+                    return <Product data={product} key={index} />
                 })}
             </div>
 

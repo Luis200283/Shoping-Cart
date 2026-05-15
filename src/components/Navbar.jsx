@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="fixed flex justify-between  bg-gray-800 px-4 w-full z-10">
       <div
         id="Home"
-        className="flex-4 sm:flex-3 lg:flex-1 text-xl sm:text-2xl flex items-center justify-between h-16"
+        className="text-2xl flex items-center h-16"
       >
         <Link
           to="/"
@@ -20,13 +20,13 @@ function Navbar() {
 
       <div
         id="Seach-bar"
-        className="flex flex-2 items-center focus:outline-none justify-center space-x-5 sm:space-x-10"
+        className="flex flex-1 items-center focus:outline-none justify-center space-x-5 sm:space-x-10"
       >
         <div className="relative hidden sm:block px-2 sm:px-10">
           <input
             placeholder="Search"
             type="text"
-            className="bg-gray-50 w-50 md:w-100 rounded-full px-2 text-gray-700 text-center p-1 focus:ring-0 focus:outline-none"
+            className="bg-gray-50 w-50 md:w-100 lg:w-120 rounded-full px-2 text-gray-700 text-center p-1 focus:ring-0 focus:outline-none"
           />
           <div className="hidden sm:block absolute -top-1 right-0">
             <div className="w-10 h-10 flex items-center justify-center rounded-full  hover:bg-gray-100 group">
@@ -49,10 +49,10 @@ function Navbar() {
         </div>
       </div>
 
-      <Link to={open ? "/cart" : "/"}>
+      <Link to={open ? "/cart/1" : "/"}>
         <div
           id="shopCart"
-          className="flex flex-1 w-10 justify-end items-center"
+          className="flex flex-1 items-center h-full"
           onClick={() => setOpen(!open)}
         >
           <div className="w-12 h-12 bg-gray-700 shadow-sm/30 flex items-center justify-center rounded-full  hover:bg-gray-100 group">
