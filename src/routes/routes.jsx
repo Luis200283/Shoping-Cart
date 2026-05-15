@@ -1,8 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import App, {
-  loader as productLoader,
-  action as productAction,
-} from "../App.jsx";
+import App, { loader as productLoader } from "../App.jsx";
 import ErrorPage from "./ErrorPage.jsx";
 import Cart from "./cart.jsx";
 
@@ -13,7 +10,6 @@ export default function routes() {
       element: <App />,
       errorElement: <ErrorPage />,
       loader: productLoader,
-      action: productAction,
       children: [
         {
           path: "/cart/:cartId",

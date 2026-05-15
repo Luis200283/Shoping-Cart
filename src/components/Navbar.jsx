@@ -1,8 +1,17 @@
 import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
 
-function Navbar() {
+function Navbar({ cart, update }) {
   const [open, setOpen] = useState(true)
+
+  function totalProducts() {
+    let total = 0
+    cart.forEach(element => {
+      const add = Number(element.quantity)
+      total += add
+    });
+    return total
+  }
 
   return (
     <nav className="fixed flex justify-between  bg-gray-800 px-4 w-full z-10">
@@ -57,7 +66,7 @@ function Navbar() {
         >
           <div className="w-12 h-12 bg-gray-700 shadow-sm/30 flex items-center justify-center rounded-full  hover:bg-gray-100 group">
             <span className="text-teal-600 font-extrabold absolute text-sm text-shadow-2xl/30 top-0.5 right-3 w-5 h-5 text-center bg-gray-100 rounded-full group-hover:bg-teal-400 group-hover:text-gray-100">
-              0
+              {totalProducts()}
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +86,7 @@ function Navbar() {
         </div>
       </Link>
       <div id="modal">
-        <Outlet />
+        <Outlet context={{ cart, update }} />
       </div>
     </nav>
   );
